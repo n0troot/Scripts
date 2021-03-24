@@ -1,2 +1,1 @@
-# batchScripts
-useful batch scripts
+#Scripts
