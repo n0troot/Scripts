@@ -13,7 +13,7 @@ PROCESS_ALL_ACCESS = ( 0x000F0000 | 0x00100000 | 0xFFF )
 
 lpWindowNAme = ctypes.c_char_p(input("Process Title => ").encode("UTF-8"))
 hWnd = u_handle.FindWindowA(None, lpWindowNAme)
-
+time.sleep(0.5)
 if hWnd == 0:
 	print(red + "[-]" + white + " Could Not Grab Handle! Error Code: {0}".format(k_handle.GetLastError()))
 	exit(1)
@@ -22,7 +22,7 @@ else:
 	
 lpdwProcessId = ctypes.c_ulong()
 getPid = u_handle.GetWindowThreadProcessId(hWnd, ctypes.byref(lpdwProcessId))
-time.sleep(1)
+time.sleep(0.5)
 if getPid == 0:
 	print(red + "[-]" + white + " Could Not Grab PID! Error Code: {0}".format(k_handle.GetLastError()))
 	exit(1)
@@ -34,7 +34,7 @@ bInheritHandle = False
 dwProcessId = lpdwProcessId
 
 hProcess = k_handle.OpenProcess(dwDesiredAccess, bInheritHandle, dwProcessId)
-time.sleep(1)
+time.sleep(0.5)
 if hProcess == 0:
 	print(red + "[-]" + white + " Could Not Open Process! Error Code: {0}".format(k_handle.GetLastError()))
 else:
