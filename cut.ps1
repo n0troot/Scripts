@@ -12,4 +12,4 @@ function cut {
 }
 
 
-#This acts somewhat like the Linux's "cut" command. (cut -d <delimiter> -f <field>)
+#This acts somewhat like Linux's "cut" command. (cut -d <delimiter> -f <field>)
